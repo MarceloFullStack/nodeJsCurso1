@@ -5,6 +5,6 @@ module.exports = function(app){
    
       app.post("/noticias/salvar", function(req, res) {
         var noticias = req.body
-        res.send('noticias');
+        res.send(noticias);
       });
 }
