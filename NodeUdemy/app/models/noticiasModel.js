@@ -1,11 +1,17 @@
 module.exports = function(){
-    this.getNoticias= function(connection, callBack){
-        connection.query("select * from noticias", callBack);
+
+    this.getNoticias = function(connection, callback){
+        connection.query('SELECT * FROM noticias', callback);
     }
 
-    this.getNoticias = function(connection, callBack){
-        connection.query("select * from noticias where idNoticia = 2", callBack)
+    this.getNoticia = function(connection, callback){
+        connection.query('SELECT * FROM noticias WHERE id_noticia = 2', callback);
     }
 
-    return this
+    this.salvarNoticia = function(noticia, connection, callback){
+        connection.query('INSERT INTO noticias SET ?', noticia, callback);
+    }
+
+    return this;
+
 }

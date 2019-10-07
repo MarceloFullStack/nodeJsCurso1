@@ -1,19 +1,16 @@
-var mysql = require("mysql");
+var mysql = require('mysql');
 
-
-var connMysql = function(){
-
-    console.log('conexao estabelecida')
-
-    return mysql.createConnection({
-      host: "localhost",
-      user: "root",
-      password: "123",
-      database: "portalNoticias"
+var connMySQL = function(){
+    console.log('Conexao com o bd foi estabelecida');
+    return connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '123',
+        database: 'portalNoticias'
     });
 }
 
-module.exports = function (){
-  console.log('autoload carregou modo de conexao com banco de dados')
-  return connMysql
+module.exports = function(){
+    console.log('O autoload carregou o módulo de conexão com o bd');
+    return connMySQL;
 }
